@@ -1,0 +1,178 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+$primary-color: #684BB1;
+$accent-color: hsl(300, 69%, 71%);
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+  background-color:$primary-color;
+  color: white;
+}
+h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+main {
+  margin-top: 5rem;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#bg {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+  background-image: url('../images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img#logo {
+  height: 19px;
+  width: 120px;
+  margin-top: 2rem;
+}
+image#illustrationMobile {
+  background-size: 296px 209px;
+  margin-top: 2rem;
+}
+
+button#registerButton {
+  width: 16.6em;
+  height: 3.3em;
+  border: 0;
+  border-radius: 1.25rem;
+  padding: 0;
+  align-self: center;
+  background-color: white;
+  line-height: 1.5em;
+  font-size: 0.75rem;
+  color: $primary-color;
+  font-family: 'Poppins', sans-serif;
+  &:hover, &:focus {
+    background-color: $accent-color;
+    color: white;
+    box-shadow: 4px 16px 58px -13px rgba(0,0,0,1);
+    -webkit-box-shadow: 4px 16px 58px -13px rgba(0,0,0,1);
+    -moz-box-shadow: 4px 16px 58px -13px rgba(0,0,0,1);
+  }
+}
+
+.social-buttons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.social-button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1em;
+  svg {
+    height: 1rem;
+    width: 1rem;
+    path {
+      fill: white;
+    }
+  }
+}
+
+footer {
+  margin-top: 2rem;
+  max-width: 100%;
+}
+#illustrationDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #bg {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('../images/bg-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  }
+  #illustrationDesktop {
+    display: block;
+  }
+  h1, p {
+    text-align: start;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1.125rem;
+  }
+  .content {
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  #registerButton {
+    align-self: flex-start !important;
+    font-size: 1.125rem;
+  }
+  main {
+    margin-top: 0;
+  }
+
+  button.social-button {
+    &:hover,&:focus {
+      border: 1px solid #FF52C1;
+      margin-left: 1em;
+      svg {
+        height: 1rem;
+        width: 1rem;
+        path {
+          fill: #FF52C1;
+        }
+    }
+    }
+  }
+  .social-buttons-list {
+    justify-content: flex-end;
+  }
+  footer {
+    margin-right: 4rem;
+  }
+}
